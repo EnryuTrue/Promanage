@@ -69,6 +69,44 @@ function RootLayoutNav() {
         }} 
       />
       <Stack.Screen 
+        name="add-tenant" 
+        options={{ 
+          presentation: "modal",
+          title: "Add Tenant",
+        }} 
+      />
+      <Stack.Screen 
+        name="transactions" 
+        options={{ 
+          title: "All Transactions",
+        }} 
+      />
+      <Stack.Screen 
+        name="calendar" 
+        options={{ 
+          title: "Calendar",
+        }} 
+      />
+      <Stack.Screen 
+        name="tenant/[id]" 
+        options={{ 
+          title: "Tenant Details",
+        }} 
+      />
+      <Stack.Screen 
+        name="lease/[id]" 
+        options={{ 
+          title: "Lease Details",
+        }} 
+      />
+      <Stack.Screen 
+        name="mark-payment" 
+        options={{ 
+          presentation: "modal",
+          title: "Mark Payment",
+        }} 
+      />
+      <Stack.Screen 
         name="property/[id]" 
         options={{ 
           title: "Property Details",

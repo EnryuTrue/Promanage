@@ -113,13 +113,13 @@ export default function PropertyDetailScreen() {
                       <>
                         <Button
                           title="Record Payment"
-                          onPress={() => {}}
+                          onPress={() => router.push(`/mark-payment?leaseId=${lease.id}`)}
                           size="small"
                           style={styles.actionButton}
                         />
                         <Button
                           title="View Tenant"
-                          onPress={() => {}}
+                          onPress={() => router.push(`/tenant/${lease.tenantId}`)}
                           variant="outline"
                           size="small"
                           style={styles.actionButton}
@@ -128,7 +128,7 @@ export default function PropertyDetailScreen() {
                     ) : (
                       <Button
                         title="Add Tenant"
-                        onPress={() => router.push(`/add-unit?propertyId=${property.id}&unitId=${unit.id}&mode=tenant`)}
+                        onPress={() => router.push(`/add-tenant?propertyId=${property.id}&unitId=${unit.id}`)}
                         size="small"
                         style={styles.actionButton}
                       />

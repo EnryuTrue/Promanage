@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { router } from 'expo-router';
-import { Plus, Home, DollarSign, AlertCircle, TrendingUp } from 'lucide-react-native';
+import { Plus, Home, DollarSign, AlertCircle, TrendingUp, Calendar } from 'lucide-react-native';
 import { StatCard } from '@/components/StatCard';
 import { Card } from '@/components/Card';
 import { useProperties } from '@/hooks/useProperties';
@@ -103,9 +103,17 @@ export default function DashboardScreen() {
             <Text style={styles.greeting}>Welcome Back!</Text>
             <Text style={styles.subtitle}>Here&apos;s your property overview</Text>
           </View>
-          <TouchableOpacity style={styles.notificationButton}>
-            <AlertCircle color={theme.colors.text} size={24} />
-          </TouchableOpacity>
+          <View style={styles.headerActions}>
+            <TouchableOpacity 
+              style={styles.headerButton}
+              onPress={() => router.push('/calendar')}
+            >
+              <Calendar color={theme.colors.text} size={24} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.headerButton}>
+              <AlertCircle color={theme.colors.text} size={24} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.statsGrid}>
@@ -153,7 +161,7 @@ export default function DashboardScreen() {
         <Card>
           <View style={styles.recentHeader}>
             <Text style={styles.sectionTitle}>Recent Activity</Text>
-            <TouchableOpacity onPress={() => router.push('/accounting')}>
+            <TouchableOpacity onPress={() => router.push('/transactions')}>
               <Text style={styles.viewAll}>View All</Text>
             </TouchableOpacity>
           </View>
@@ -333,5 +341,12 @@ const styles = StyleSheet.create({
   loadingContainer: {
     flex: 1,
     backgroundColor: theme.colors.background,
+  },
+  headerActions: {
+    flexDirection: 'row',
+    gap: theme.spacing.sm,
+  },
+  headerButton: {
+    padding: theme.spacing.sm,
   },
 });

@@ -113,7 +113,7 @@ export default function AccountingScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Recent Transactions</Text>
-            <TouchableOpacity onPress={() => console.log('View all transactions')}>
+            <TouchableOpacity onPress={() => router.push('/transactions')}>
               <Text style={styles.viewAll}>View All</Text>
             </TouchableOpacity>
           </View>
